@@ -12,8 +12,6 @@ jobs:
  - name: Download docker image
  run: docker pull vitorleite09/senai-tdt:latest
  - name: Remove all container
- run: docker container rm -f $(docker container ps -a -q) || echo
-"Nenhum container"
+ run: docker container rm -f $(docker container ps -a -q) || echo "Nenhum container"
  - name: Run container
- run: docker run -d -p 8080:80 --name webserver
-vitorleite09/senai-tdt:latest
+ run: docker run -d -p 8080:80 --name webserver vitorleite09/senai-tdt:latest
